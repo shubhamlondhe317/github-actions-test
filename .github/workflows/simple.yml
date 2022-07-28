@@ -17,8 +17,12 @@ jobs:
         run: |
           print("Awadh Prajapat")
         shell: python
-      - name: powershell
-        run: |
-          Get-Service
-        shell: powershell
-      
+
+  run-windows-command:
+    runs-on: windows-latest
+    steps:
+      - name: directory powershell
+        run: Get-Location
+      - name: directory bash
+        run: pwd
+        shell: bash    
