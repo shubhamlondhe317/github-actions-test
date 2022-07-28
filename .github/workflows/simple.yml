@@ -17,3 +17,8 @@ jobs:
         run: |
           print("Awadh Prajapat")
         shell: python
+      - name: powershell
+        run: |
+          print("hello")
+        shell: powershell
+      
