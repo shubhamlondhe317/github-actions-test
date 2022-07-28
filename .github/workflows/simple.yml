@@ -19,6 +19,6 @@ jobs:
         shell: python
       - name: powershell
         run: |
-          print("hello")
+          Get-Service
         shell: powershell
       
