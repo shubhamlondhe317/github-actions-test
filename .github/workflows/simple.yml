@@ -12,17 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: run oneline script
-        run : echo hello world
+        run : sh ./github-actions-script.sh
 
       - name: run multi line script
         run : |
-          echo Awadh 
-          echo Prajapat
+          echo pre build disc space
+          
+          echo here is what is in the folder
           ls -a 
-          echo
-          echo is java installed
-          java --version
-          echo is git installed
-          git --version
-          echo what environment variable is available
-          env
