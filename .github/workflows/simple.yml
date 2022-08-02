@@ -1,29 +1,20 @@
 name: shell commands
 
-on : [push]
+on : 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]    
 
 jobs:
-  run-shell-command:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string 
-        run: echo "Awadh"
-      - name: multiline script
-        run: |
-          node -v 
-          npm -v
-          java --version
-      - name: python command
-        run: |
-          print("Awadh Prajapat")
-        shell: python
+      - uses: actions/checkout@v2
+      - name: run oneline script
+        run : echo hello world
 
-  run-windows-command:
-    runs-on: windows-latest
-    needs: ["run-shell-command"]
-    steps:
-      - name: directory powershell
-        run: Get-Location
-      - name: directory bash
-        run: pwd
-        shell: bash 
+      - name: run multi line script
+        run : |
+          echo Awadh 
+          echo Prajapat
