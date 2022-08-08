@@ -12,7 +12,7 @@ jobs:
         run: df
 
       - name: Step 2 - checkout the master branch
-        run: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Step 3 - setup jdk 1.8 
         uses: actions/setup-java@v1
