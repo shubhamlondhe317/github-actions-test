@@ -1,5 +1,5 @@
 name: getting started again
-
+# HELLO
 on:
   push:
     branches: [master]
@@ -9,43 +9,43 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Step 1 - Log the pre build disc-space
-        run: ls
+        run : ls
       
       - name: Step 2 - Checkout the master github branch 
         run : actions/checkout@v2
 
       - name: Step 3 - setup jdk 1.8
-        run: actions/setup-java@v1
-        with:
+        run : actions/setup-java@v1
+        with: 
           java-version: 1.8
       
       - name: Step 4 - Build your jakarta web app with maven
-        run: echo mvn -B package --file pom.xml
+        run : echo mvn -B package --file pom.xml
 
       - name: Step 5 - Check windows execution policy
-        run: |
+        run : |
           echo here is the windows execution policy 
           Get-ExecutionPolicy   
 
       - name: Step 6 - List windows environment variables
-        run: env
+        run : env
   
   build-on-ubuntu:
     runs-on: ubuntu-latest
     steps:
       - name: Step 1 - Log the pre build disc-space
-        run: ls
+        run : ls
       
       - name: Step 2 - Checkout the master github branch 
         run : actions/checkout@v2
 
       - name: Step 3 - setup jdk 1.8
-        run: actions/setup-java@v1
+        run : actions/setup-java@v1
         with:
           java-version: 1.8
       
       - name: Step 4 - Build your jakarta web app with maven
-        run: echo mvn -B package --file pom.xml
+        run : echo mvn -B package --file pom.xml
       
       - name: Step 6 - List windows environment variables
-        run: env
+        run : env
